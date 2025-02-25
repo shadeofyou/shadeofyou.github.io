@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  href: string;
+  class: string;
+}
+
+const { href, class: className } = Astro.props;
+---
+
+<a href={href} class={"p-2 rounded-md " + className} target="_blank">
+  <slot />
+</a>

@@ -1,11 +1,63 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import iconSrc from "../assets/aaa.png";
+import Avatar from "../components/Avatar.astro";
+import { IconBrandX } from "@tabler/icons-react";
+import IconButton from "../components/IconButton.astro";
+import Card from "../components/Card.astro";
+import Career from "../components/Career.astro";
+import Work from "../components/Work.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<div class="m-4 flex flex-col items-center gap-4">
+		<Avatar src={iconSrc} />
+		<h1 class="text-4xl">Shadeofyou</h1>
+	</div>
+	<div class="flex justify-center items-center gap-2">
+		<IconButton href="https://x.com/Yakult_j_0610" class="bg-blue-500">
+			<IconBrandX size={24} />
+		</IconButton>
+		<IconButton href="https://x.com/Yakult_j_0610" class="bg-blue-500">
+			<IconBrandX size={24} />
+		</IconButton>
+		<IconButton href="https://x.com/Yakult_j_0610" class="bg-blue-500">
+			<IconBrandX size={24} />
+		</IconButton>
+	</div>
+	<div class="my-4 grid gap-4 md:grid-cols-2">
+		<Card>
+			<h2 class="text-2xl mb-4">プロフィール</h2>
+		</Card>
+		<Card>
+			<h2 class="text-2xl mb-4">経歴</h2>
+			<div class="flex flex-col gap-4">
+				<Career color="bg-sky-400" name="市立小学校" date="2009-04">
+					<IconBrandX slot="icon" />
+				</Career>
+				<Career color="bg-sky-400" name="市立中学校" date="2015-04">
+					<IconBrandX slot="icon" />
+				</Career>
+				<Career color="bg-sky-400" name="市立高等学校" date="2018-04">
+					<IconBrandX slot="icon" />
+				</Career>
+				<Career color="bg-sky-400" name="東京工業大学" date="2021-04">
+					<IconBrandX slot="icon" />
+				</Career>
+				<Career color="bg-sky-400" name="東京科学大学大学院" date="2025-04">
+					<IconBrandX slot="icon" />
+				</Career>
+			</div>
+		</Card>
+
+		<Card><h2 class="text-2xl mb-4">食歴</h2></Card>
+		<Card><h2 class="text-2xl mb-4">実績</h2></Card>
+	</div>
+
+	<div class="flex justify-center">
+		<h2 class="text-3xl">成果物</h2>
+	</div>
+	<div class="my-4 grid gap-4 md:grid-cols-3 grid-cols-2">
+		<Work src={iconSrc} title="Work" description="Work" href="//eyrin.jp" />
+	</div>
 </Layout>

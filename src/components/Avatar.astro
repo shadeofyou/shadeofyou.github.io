@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  src: ImageMetadata;
+}
+
+const { src } = Astro.props;
+---
+
+<Image
+  src={src}
+  alt="icon"
+  class="h-60 w-60 aspect-square object-cover rounded-full bg-white"
+/>
