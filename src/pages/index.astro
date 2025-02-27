@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import iconSrc from "../assets/aaa.png";
 import Avatar from "../components/Avatar.astro";
 import { IconBrandX } from "@tabler/icons-react";
+import { IconBrandGithub } from "@tabler/icons-react";
+import { IconNotebook } from "@tabler/icons-react";
+import Profile from "../components/Profile.astro";
 import IconButton from "../components/IconButton.astro";
 import Card from "../components/Card.astro";
 import Career from "../components/Career.astro";
@@ -13,28 +16,42 @@ import SpotifyPlaying from "../components/SpotifyPlaying.astro";
 <Layout>
 	<div class="m-4 flex flex-col items-center gap-4">
 		<Avatar src={iconSrc} />
-		<h1 class="text-4xl">Shadeofyou</h1>
+		<h1 class="text-4xl">Shade of you</h1>
 	</div>
 	<div class="flex justify-center items-center gap-2">
 		<IconButton href="https://x.com/Yakult_j_0610" class="bg-blue-500">
 			<IconBrandX size={24} />
 		</IconButton>
-		<IconButton href="https://x.com/Yakult_j_0610" class="bg-blue-500">
-			<IconBrandX size={24} />
+		<IconButton href="https://github.com/shadeofyou" class="bg-blue-500">
+			<IconBrandGithub size={24} />
 		</IconButton>
-		<IconButton href="https://x.com/Yakult_j_0610" class="bg-blue-500">
-			<IconBrandX size={24} />
+		<IconButton href="" class="bg-blue-500">
+			<IconNotebook size={24} />
 		</IconButton>
 	</div>
+
 	<div class="my-4 grid gap-4 md:grid-cols-2">
 		<Card>
-			<h2 class="text-2xl mb-4">プロフィール</h2>
+			<h2 class="text-2xl mb-4 text-center">プロフィール</h2>
+			<Profile title="所属" contents="東京科学大学院 経営工学コース" />
+			<Profile title="学年" contents="(新)修士１年" />
+			<Profile title="使用技術" contents="Python, C++, HTML, CSS" />
+			<Profile
+				title="趣味"
+				contents="野球観戦(ヤクルト), 音楽フェス, 旅行, 麻雀(雀豪1), アニメ"
+			/>
+			<Profile title="連絡先" contents="X(旧Twitter)のDMに来てください" />
+			<h2>Now Playing...</h2>
 			<SpotifyPlaying />
 		</Card>
+
 		<Card>
-			<h2 class="text-2xl mb-4">経歴</h2>
+			<h2 class="text-2xl mb-4 text-center">学歴</h2>
 			<div class="flex flex-col gap-4">
-				<Career color="bg-sky-400" name="市立小学校" date="2009-04">
+				<Career color="bg-sky-400" name="長野市立小学校" date="2009-04">
+					<IconBrandX slot="icon" />
+				</Career>
+				<Career color="bg-sky-400" name="横浜市立小学校" date="2011-04">
 					<IconBrandX slot="icon" />
 				</Career>
 				<Career color="bg-sky-400" name="市立中学校" date="2015-04">
@@ -52,14 +69,73 @@ import SpotifyPlaying from "../components/SpotifyPlaying.astro";
 			</div>
 		</Card>
 
-		<Card><h2 class="text-2xl mb-4">食歴</h2></Card>
-		<Card><h2 class="text-2xl mb-4">実績</h2></Card>
+		<Card
+			><h2 class="text-2xl mb-4 text-center">職歴</h2>
+			<div class="flex flex-col gap-4">
+				<Career
+					color="bg-sky-400"
+					name="塾講師(個別指導)"
+					date="2021-05 ~ 2024-09"
+				>
+					<IconBrandX slot="icon" />
+				</Career>
+
+				<Career
+					color="bg-sky-400"
+					name="模試・過去問演習採点スタッフ"
+					date="2021-08 ~ "
+				>
+					<IconBrandX slot="icon" />
+				</Career>
+
+				<Career color="bg-sky-400" name="共同研究" date="2024-06 ~ 2025-03">
+					<IconBrandX slot="icon" />
+				</Career>
+			</div>
+		</Card>
+
+		<Card
+			><h2 class="text-2xl mb-4 text-center">実績</h2>
+			<div class="flex flex-col gap-4">
+				<Career color="bg-sky-400" name="英検準2級" date="2018-11?">
+					<IconBrandX slot="icon" />
+				</Career>
+
+				<Career
+					color="bg-sky-400"
+					name="東京大学グローバル消費インテリジェンス寄付講座終了"
+					date="2024-06 ~ 2025-03"
+				>
+					<IconBrandX slot="icon" />
+				</Career>
+
+				<Career
+					color="bg-sky-400"
+					name="GCI内機械学習コンペティション(Titanic)優勝"
+					date="2024-06 ~ 2025-03"
+				>
+					<IconBrandX slot="icon" />
+				</Career>
+			</div>
+		</Card>
 	</div>
 
+	<!--
+				<Career
+					color="bg-sky-400"
+					name="人工知能学会全国大会で発表できたらいいな"
+					date="2025-05"
+				>
+					<IconBrandX slot="icon" />
+				</Career>
+-->
+
+	<!--以下は制作物 -->
 	<div class="flex justify-center">
 		<h2 class="text-3xl">成果物</h2>
 	</div>
+
 	<div class="my-4 grid gap-4 md:grid-cols-3 grid-cols-2">
-		<Work src={iconSrc} title="Work" description="Work" href="//eyrin.jp" />
+		<Work src={iconSrc} title="Work" description="Work" href="" />
 	</div>
 </Layout>
